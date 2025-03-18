@@ -1,0 +1,1 @@
+declare const google: typeof import('google.maps');
