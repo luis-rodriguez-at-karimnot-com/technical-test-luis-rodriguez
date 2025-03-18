@@ -1,0 +1,207 @@
+{
+  "info": {
+    "name": "Technical Test",
+    "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+  },
+  "item": [
+    {
+      "name": "bruno",
+      "event": []
+    },
+    {
+      "name": "login",
+      "event": [],
+      "request": {
+        "method": "POST",
+        "header": [],
+        "auth": null,
+        "description": "",
+        "url": {
+          "raw": "http://localhost:4000/auth/login",
+          "protocol": "http",
+          "host": [
+            "localhost:4000"
+          ],
+          "path": [
+            "auth",
+            "login"
+          ],
+          "query": [],
+          "variable": []
+        },
+        "body": {
+          "mode": "raw",
+          "raw": "{\n  \"email\": \"admin@example.com\",\n  \"password\": \"password\"\n}",
+          "options": {
+            "raw": {
+              "language": "json"
+            }
+          }
+        }
+      }
+    },
+    {
+      "name": "users delete",
+      "event": [],
+      "request": {
+        "method": "DELETE",
+        "header": [],
+        "auth": {
+          "type": "bearer",
+          "bearer": {
+            "key": "token",
+            "value": "{{access_token_value}}",
+            "type": "string"
+          }
+        },
+        "description": "",
+        "url": {
+          "raw": "http://localhost:4000/users/:id",
+          "protocol": "http",
+          "host": [
+            "localhost:4000"
+          ],
+          "path": [
+            "users",
+            ":id"
+          ],
+          "query": [],
+          "variable": [
+            {
+              "key": "id",
+              "value": "50"
+            }
+          ]
+        }
+      }
+    },
+    {
+      "name": "users find",
+      "event": [],
+      "request": {
+        "method": "GET",
+        "header": [],
+        "auth": {
+          "type": "bearer",
+          "bearer": {
+            "key": "token",
+            "value": "{{access_token_value}}",
+            "type": "string"
+          }
+        },
+        "description": "",
+        "url": {
+          "raw": "http://localhost:4000/users/:id",
+          "protocol": "http",
+          "host": [
+            "localhost:4000"
+          ],
+          "path": [
+            "users",
+            ":id"
+          ],
+          "query": [],
+          "variable": [
+            {
+              "key": "id",
+              "value": "2"
+            }
+          ]
+        }
+      }
+    },
+    {
+      "name": "users index",
+      "event": [],
+      "request": {
+        "method": "GET",
+        "header": [],
+        "auth": {
+          "type": "bearer",
+          "bearer": {
+            "key": "token",
+            "value": "{{access_token_value}}",
+            "type": "string"
+          }
+        },
+        "description": "",
+        "url": {
+          "raw": "http://localhost:4000/users?role",
+          "protocol": "http",
+          "host": [
+            "localhost:4000"
+          ],
+          "path": [
+            "users"
+          ],
+          "query": [
+            {
+              "key": "role",
+              "value": ""
+            },
+            {
+              "key": "search",
+              "value": "user1"
+            },
+            {
+              "key": "page",
+              "value": "2"
+            }
+          ],
+          "variable": []
+        }
+      }
+    },
+    {
+      "name": "users update",
+      "event": [],
+      "request": {
+        "method": "PUT",
+        "header": [],
+        "auth": {
+          "type": "bearer",
+          "bearer": {
+            "key": "token",
+            "value": "{{access_token_value}}",
+            "type": "string"
+          }
+        },
+        "description": "",
+        "url": {
+          "raw": "http://localhost:4000/users/:id",
+          "protocol": "http",
+          "host": [
+            "localhost:4000"
+          ],
+          "path": [
+            "users",
+            ":id"
+          ],
+          "query": [],
+          "variable": [
+            {
+              "key": "id",
+              "value": "2"
+            }
+          ]
+        },
+        "body": {
+          "mode": "raw",
+          "raw": "{\n  \"firstName\": \"User1 updated\"\n}",
+          "options": {
+            "raw": {
+              "language": "json"
+            }
+          }
+        }
+      }
+    }
+  ],
+  "variable": [
+    {
+      "key": "access_token_value",
+      "value": "",
+      "type": "default"
+    }
+  ]
+}
